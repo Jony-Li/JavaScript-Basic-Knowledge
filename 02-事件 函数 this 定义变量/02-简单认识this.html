@@ -3,8 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <title>JavaScript简单认识this</title>
+
+    <style>
+        *{margin:0;padding:0}
+        li{list-style-type: noe;}
+        #box{
+            margin: 50px auto;
+            width:100px;
+            height: 100px;
+            line-height: 100px;
+            background: pink;
+            text-align: center;
+            font-size: 14px;
+            color: white;
+        }
+    </style>
 </head>
 <body>
-
+<div id="box"></div>
 </body>
+<script>
+    let oDiv = document.getElementById("box");
+    /*
+    * 在事件函数里，有一个关键字this，代表触发当前事件的这个元素
+    * */
+    oDiv.onclick = fn;
+    function fn() {
+        this.innerHTML = "Jony"
+    }
+
+</script>
 </html>
