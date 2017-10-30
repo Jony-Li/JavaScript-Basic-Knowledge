@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript事件</title>
+    <style type="text/css">
+        *{margin:0;padding: 0}
+        li{list-style-type: none}
+        #box{
+            margin: 50px auto;
+            width: 100px;
+            height: 100px;
+            background: pink;
+            font-size: 14px;
+            line-height: 100px;
+            text-align: center;
+            color: white;
+        }
+
+
+    </style>
+</head>
+<body>
+<div id="box"></div>
+
+
+</body>
+<script>
+            /*
+        事件：用户的操作
+            元素.事件 = 函数;
+
+            鼠标事件：
+                * 左键单击   onclick
+                * 左键双击   ondblclick
+                * 鼠标移入   onmouseover / onmouseenter
+                * 鼠标移出   onmouseout  / onmouseleave
+                右键单击   oncontextmenu
+                鼠标按下   onmousedown
+                鼠标移动   onmousemove
+                鼠标抬起   onmouseup
+                鼠标滚轮   onmousewheel
+
+            键盘事件：
+                按键按下：onkeydown  onkeypress
+                按键抬起：onkeyup
+
+            表单事件：
+                获得焦点   onfocus
+                失去焦点   onblur
+                内容改变   onchange
+                ……
+
+            系统事件：
+                * 加载完成    onload
+                内容滚动    onscroll
+                窗口改变大小 onresize
+                ……
+
+        函数 / 方法
+         */
+            let oDiv = document.getElementById("box");
+            oDiv.onclick = function () {
+                alert("点击事件");
+            };
+</script>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript点击事件</title>
+    <style>
+        *{margin:0;padding:0;}
+        #homepage{
+            position: relative;
+            margin:50px auto;
+            width:100px;
+            height: 20px;
+            text-align: center;
+            line-height: 20px;
+            background-color: pink;
+            color: white;
+            border-radius: 5px;
+            font-size: 12px;
+            cursor: pointer;
+        }
+        a{
+            text-decoration: none;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div id="homepage">点我试试……</div>
+</body>
+<script>
+    let oDiv = document.getElementById('homepage');
+    oDiv.onclick = function () {
+        oDiv.innerHTML = '<a href="https://www.baidu.com/">百度一下</a>'
+    }
+</script>
+</html>
