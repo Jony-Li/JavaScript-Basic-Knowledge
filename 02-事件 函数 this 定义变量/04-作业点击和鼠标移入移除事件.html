@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>点击和鼠标移入和移除事件</title>
+    <style>
+        *{margin:0;padding: 0}
+        li{list-style-type: none}
+        div{
+            width: 200px;
+            height: 50px;
+            background: pink;
+            line-height: 50px;
+            text-align: center;
+            font-size: 14px;
+            color: white;
+            border-radius: 5px;
+        }
+        #div1{
+            margin: 50px auto;
+        }
+        #div2{
+            margin: 0 auto;
+        }
+
+    </style>
+</head>
+<body>
+<div id="div1">点我试试</div>
+<div id="div2">点我试试</div>
+</body>
+<script>
+    let oDiv1 = document.querySelector("#div1");
+    let oDiv2 = document.querySelector("#div2");
+    oDiv1.onclick = function () {
+        this.innerHTML = "#div1 被点击了";
+    }
+    oDiv2.onclick = function () {
+        this.innerHTML = "#div2 被点击了";
+    }
+    oDiv2.onmouseenter = function () {
+        oDiv1.innerHTML = "#div2鼠标移入了";
+    }
+    oDiv2.onmouseout = function () {
+        oDiv1.innerHTML = "点我试试";
+    }
+</script>
+</html>
