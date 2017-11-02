@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js操作样式的另外途径</title>
+    <style>
+        *{margin: 0;padding: 0}
+        li{list-style-type: none}
+        #box.myBox{
+            margin:50px auto;
+            width: 200px;
+            height: 200px;
+            color: white;
+            background: pink;
+            text-align: center;
+            line-height: 100px;
+        }
+    </style>
+</head>
+<body>
+<div id="box">Jony</div>
+
+</body>
+<script>
+    /*
+    *操作复合属性的时候用驼峰命名方式
+    *操作样式很多很负责的时候，我们就要考虑通过class名来代替js操作
+    */
+    let oBox = document.getElementById("box");
+    //每改变一次css样式都会渲染一次，存在性能问题
+/*    oBox.style.width = "100px";
+    oBox.style.height = "100px";
+    oBox.style.backgroundColor = "pink";*/
+
+    //提升性能的方式
+    oBox.className += " myBox";
+</script>
+</html>

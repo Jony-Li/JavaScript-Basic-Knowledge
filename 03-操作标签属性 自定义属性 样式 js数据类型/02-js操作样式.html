@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js操作样式</title>
+    <style id="style">
+        *{margin: 0;padding: 0}
+        li{list-style-type: none}
+        div#box{
+            margin: 20px auto;
+            width: 50px;
+            height: 300px;
+            background: pink;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+<div id="box"></div>
+</body>
+<script>
+    /*
+    * 控制元素样式：
+    *       外部样式表：    × js不能操作外部样式表
+    *       内部样式表：    √ 优先级问题？？？？ 很麻烦 不常用
+    *
+    *       行内样式标签属性：大部分情况下js都是通过修改行内样式达到修改样式的目的
+    * */
+
+    let oStyle = document.getElementById("style");
+    oStyle.innerHTML += "#box{\n" +
+        "            margin: 20px auto;\n" +
+        "            width: 100px;\n" +
+        "            height: 200px !important;\n" +
+        "            background: pink;\n" +
+        "            border-radius: 5px;\n" +
+        "        }"// 会有优先级问题，这样设置样式并不会生效  div#box > #box
+
+    let oDiv = document.getElementById("box");
+    //oDiv.style.height = "200px";// 只能改变行内样式表
+    //alert(oDiv.style.height);//因为没有设置行内样式表，所以为空白
+    /*
+    * oDiv.style 只存储着行内样式
+    * */
+    //oDiv.style += "width:200px;"// 对象 + 字符串 所以不能更改样式表
+
+    /*
+    * cssText 获取的是整体样式的字符内容
+    * */
+    oDiv.style.cssText += "width:500px;";
+
+    /*
+    *当我们需要操作单个属性的时候，或者拼接属性不合理的时候。
+    * 一般使用 . 操作取修改元素的行内样式
+    * */
+    oDiv.style.width = "800px";
+
+
+
+
+
+
+
+</script>
+</html>
